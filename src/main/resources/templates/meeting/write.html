@@ -123,7 +123,7 @@
             </div>
             <!-- / .main-navbar -->
             <form  action="/meetup/post" method="post">
-                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                <!--<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />-->
                 <p>title<br>
                     <input type="text" name="mtitle">
                 </p>
@@ -140,7 +140,7 @@
                     <textarea name="pre"></textarea><br>
                 </p>
                 <p>내용<br>
-                    <textarea name="content"></textarea><br>
+                    <textarea name="mcontent"></textarea><br>
                 </p>
                 <p>결과<br>
                     <textarea name="post"></textarea><br>

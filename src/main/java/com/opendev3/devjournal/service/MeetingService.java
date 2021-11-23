@@ -32,7 +32,7 @@ public class MeetingService {
                     .people(meetingEntity.getPeople())
                     .purpose(meetingEntity.getPurpose())
                     .pre(meetingEntity.getPre())
-                    .content(meetingEntity.getContent())
+                    .mcontent(meetingEntity.getMcontent())
                     .post(meetingEntity.getPost())
                     .createdDate(meetingEntity.getCreatedDate())
                     .build();
@@ -56,7 +56,7 @@ public class MeetingService {
                 .people(meetingEntity.getPeople())
                 .purpose(meetingEntity.getPurpose())
                 .pre(meetingEntity.getPre())
-                .content(meetingEntity.getContent())
+                .mcontent(meetingEntity.getMcontent())
                 .post(meetingEntity.getPost())
                 .createdDate(meetingEntity.getCreatedDate())
                 .build();

@@ -17,7 +17,7 @@ public class MeetingDto {
     private String people;
     private String purpose;
     private String pre;
-    private String content;
+    private String mcontent;
     private String post;
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
@@ -30,7 +30,7 @@ public class MeetingDto {
                 .people(people)
                 .purpose(purpose)
                 .pre(pre)
-                .content(content)
+                .mcontent(mcontent)
                 .post(post)
                 .build();
         return meetingEntity;
@@ -38,14 +38,14 @@ public class MeetingDto {
 
     @Builder
     public MeetingDto(Long meetid, String mtitle, String place,String people, String purpose, String pre,
-                      String content, String post, LocalDateTime createdDate, LocalDateTime modifiedDate) {
+                      String mcontent, String post, LocalDateTime createdDate, LocalDateTime modifiedDate) {
         this.meetid = meetid;
         this.mtitle = mtitle;
         this.place = place;
         this.people = people;
         this.purpose = purpose;
         this.pre = pre;
-        this.content=content;
+        this.mcontent=mcontent;
         this.post= post;
         this.createdDate = createdDate;
         this.modifiedDate = modifiedDate;

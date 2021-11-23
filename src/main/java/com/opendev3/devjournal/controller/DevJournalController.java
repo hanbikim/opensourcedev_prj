@@ -42,7 +42,7 @@ public class DevJournalController {
         DevJournalDto devjournalDto = devjournalService.getPost(no1);
 
         model.addAttribute("devjournalDto", devjournalDto);
-         return "/layouts/form-components";
+         return "/tidy/detail";
     }
 
     @GetMapping("/tidy/post/edit/{no1}")

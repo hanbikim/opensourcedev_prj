@@ -32,7 +32,7 @@ public class MeetingEntity extends TimeEntity {
     private String pre;
 
     @Column(columnDefinition = "TEXT", nullable = false)
-    private String content;
+    private String mcontent;
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String post;
@@ -40,14 +40,14 @@ public class MeetingEntity extends TimeEntity {
 
     @Builder
     public MeetingEntity(Long meetid, String mtitle, String place,String people, String purpose,
-                         String pre, String content, String post) {
+                         String pre, String mcontent, String post) {
         this.meetid = meetid;
         this.mtitle = mtitle;
         this.place = place;
         this.people = people;
         this.purpose = purpose;
         this.pre = pre;
-        this.content=content;
+        this.mcontent=mcontent;
         this.post= post;
     }
 
