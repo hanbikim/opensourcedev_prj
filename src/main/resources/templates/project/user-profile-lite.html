@@ -40,7 +40,7 @@
                   <i class="fas fa-search"></i>
                 </div>
               </div>
-              <input class="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search"> </div>
+              <!--                    <input class="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search"> </div>--></div>
           </form>
           <div class="nav-wrapper">
             <ul class="nav flex-column">
@@ -95,7 +95,8 @@
                       <i class="fas fa-search"></i>
                     </div>
                   </div>
-                  <input class="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search"> </div>
+<!--                                      <input class="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search"> </div>-->
+                </div>
               </form>
               <ul class="navbar-nav border-left flex-row ">
                 <li class="nav-item dropdown">
@@ -190,14 +191,14 @@
                       </div>
                       <p th:if="${#fields.hasErrors('GitHub')}" th:errors="*{GitHub}" class="fieldError">Incorrect data</p>
 
+
                       <div class="form-row">
                         <div class="form-group col-md-6">
                           <label for="EffectiveDate">EffectiveDate</label>
-                          <input type="date" th:field="*{EffectiveDate}" class="EffectiveDate" id="EffectiveDate">
+                          <input type="date" th:field="*{EffectiveDate}" class="form-control" id="EffectiveDate" >
                         </div>
                       </div>
                       <p th:if="${#fields.hasErrors('EffectiveDate')}" th:errors="*{EffectiveDate}" class="fieldError">Incorrect data</p>
-
 
                       <div class="form-row">
                         <div class="form-group col-md-6">
@@ -206,6 +207,7 @@
                         </div>
                       </div>
                       <p th:if="${#fields.hasErrors('Deadline')}" th:errors="*{Deadline}" class="fieldError">Incorrect data</p>
+
 
                       <div class="form-row">
                         <div class="form-group col-md-12">

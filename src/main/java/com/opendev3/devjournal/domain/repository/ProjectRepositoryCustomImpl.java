@@ -36,16 +36,15 @@ public class ProjectRepositoryCustomImpl implements ProjectRepositoryCustom {
         QueryResults<MainProjectDto> result = queryFactory
                 .select(
                         new QMainProjectDto(
-                                project.prj_Id/*,
+                                project.prj_Id,
                                 project.Title,
                                 project.Author,
-                                project.EffectiveDate,
-                                project.Deadline,
-                                project.GitHub,
-                                project.UsingTech,
-                                project.UsingLang,
                                 project.Purpose,
-                                project.feDescription*/)
+                                project.UsingLang,
+                                project.UsingTech,
+                                project.GitHub,
+                                project.Deadline,
+                                project.feDescription)
                 )
                 .from(project)
                 .where(projectNameLike(projectSearchDto.getSearchQuery()))
