@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.modelmapper.ModelMapper;
 
+import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
 
 @Getter @Setter
@@ -18,7 +19,22 @@ public class ProjectFormDto {
     @NotBlank(message = "필수 입력 값입니다.")
     private String Author;
 
-    @NotBlank(message = "프로젝트 상세는 필수 입력 값입니다.")
+    @NotBlank(message = "필수 입력 값입니다.")
+    private String EffectiveDate;               //시작날짜
+
+    @NotBlank(message = "필수 입력 값입니다.")
+    private String Deadline;               //마감일
+
+    @NotBlank(message = "필수 입력 값입니다.")
+    private String GitHub;               //깃헙 주소
+
+    @NotBlank(message = "필수 입력 값입니다.")
+    private String UsingTech;               //사용한 기술
+
+    @NotBlank(message = "필수 입력 값입니다.")
+    private String UsingLang;               //사용한 언어
+
+    @NotBlank(message = "필수 입력 값입니다.")
     private String feDescription;
 
 

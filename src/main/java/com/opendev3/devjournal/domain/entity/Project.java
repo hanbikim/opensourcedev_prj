@@ -25,6 +25,21 @@ public class Project{
     @Column(nullable=false, length = 50)
     private String Author;               //프로젝트 제작자명
 
+    @Column(nullable=false, length = 50)
+    private String EffectiveDate;               //시작날짜
+
+    @Column(nullable=false, length = 50)
+    private String Deadline;               //마감일
+
+    @Column(nullable=false, length = 50)
+    private String GitHub;               //깃헙 주소
+
+    @Column(nullable=false, length = 50)
+    private String UsingTech;               //사용한 기술
+
+    @Column(nullable=false, length = 50)
+    private String UsingLang;               //사용한 언어
+
     @Lob
     @Column(nullable=false)
     private String feDescription;       //프로젝트 상세설명
@@ -33,6 +48,11 @@ public class Project{
     public void updateProject(ProjectFormDto projectFormDto) {
         this.Title = projectFormDto.getTitle();
         this.Author=projectFormDto.getAuthor();
+        this.Deadline=projectFormDto.getDeadline();
+        this.EffectiveDate=projectFormDto.getEffectiveDate();
+        this.GitHub=projectFormDto.getGitHub();
+        this.UsingTech=projectFormDto.getUsingTech();
+        this.UsingLang=projectFormDto.getUsingLang();
         this.feDescription = projectFormDto.getFeDescription();
     }
 

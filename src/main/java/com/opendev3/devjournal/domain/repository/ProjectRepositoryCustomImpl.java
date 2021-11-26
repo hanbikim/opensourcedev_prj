@@ -39,6 +39,11 @@ public class ProjectRepositoryCustomImpl implements ProjectRepositoryCustom {
                                 project.prj_Id,
                                 project.Title,
                                 project.Author,
+                                project.EffectiveDate,
+                                project.Deadline,
+                                project.GitHub,
+                                project.UsingTech,
+                                project.UsingLang,
                                 project.feDescription)
                 )
                 .from(project)

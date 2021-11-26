@@ -29,7 +29,7 @@ public class ToDoListController {
     public String list(Model model) {
         this.user = userRepository.findById(UserService.currentUserId());
         model.addAttribute("tdlList", toDoListService.findTdlListByUser(this.user));
-        return "/toDoList/list";
+        return "/toDoList/listTest";
     }
 
     //tdlList add
