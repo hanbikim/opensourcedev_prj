@@ -26,19 +26,22 @@ public class Project{
     private String Author;               //프로젝트 제작자명
 
     @Column(nullable=false, length = 50)
-    private String EffectiveDate;               //시작날짜
+    private String EffectiveDate;           //시작날짜
 
     @Column(nullable=false, length = 50)
     private String Deadline;               //마감일
 
-    @Column(nullable=false, length = 50)
+    @Column(nullable=false, length = 80)
     private String GitHub;               //깃헙 주소
 
-    @Column(nullable=false, length = 50)
+    @Column(nullable=false, length = 100)
     private String UsingTech;               //사용한 기술
 
     @Column(nullable=false, length = 50)
     private String UsingLang;               //사용한 언어
+
+    @Column(nullable=false, length = 100)
+    private String Purpose;               //purpose
 
     @Lob
     @Column(nullable=false)

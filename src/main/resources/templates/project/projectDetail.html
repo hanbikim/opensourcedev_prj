@@ -173,6 +173,7 @@
               <div class="repImgDiv">
                 <img src="/images/content-management/17.jpg" class = "rounded repImg" th:alt="${project.Title}">
               </div>
+
               <div class="wd50">
                 <div class="container">
                   <div class="mt-5"></div>
@@ -191,10 +192,54 @@
                     </div>
                 </div>
 
+                <div class="container">
+                  <h8 class="display-5">Project Purpose</h8>
+                    <hr class="my-3">
+                    <div class="h5">
+                      <span th:text="${project.Purpose}"></span>
+                    </div>
+                </div>
+                <div class="container">
+                  <h8 class="display-5">Project Languages</h8>
+                    <hr class="my-3">
+                    <div class="h5">
+                      <span th:text="${project.UsingLang}"></span>
+                    </div>
+                </div>
+                <div class="container">
+                  <h8 class="display-5">Used technologies in "<span th:text="${project.Title}"></span></h8>
+                    <hr class="my-3">
+                    <div class="h5">
+                      <span th:text="${project.UsingTech}"></span>
+                    </div>
+                </div>
+
+                <div class="container">
+                  <h8 class="display-5">Project Github address</h8>
+                    <hr class="my-3">
+                    <div class="h5" href="${project.GitHub}">
+                      <span th:text="${project.GitHub}"></span>
+                    </div>
+                </div>
+
+                <div class="container">
+                  <h8 class="display-5">Effective Date</h8>
+                    <hr class="my-3">
+                    <div class="h5">
+                      <span th:text="${project.EffectiveDate}"></span>
+                    </div>
+                </div>
+                <div class="container">
+                  <h8 class="display-5">DeadLine</h8>
+                    <hr class="my-3">
+                    <div class="h5">
+                      <span th:text="${project.DeadLine}"></span>
+                    </div>
+                </div>
+
               </div>
 
             </div>
-
         </div>
 
             <div class="jumbotron jumbotron-fluid mgt-30">

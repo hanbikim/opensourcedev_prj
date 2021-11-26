@@ -145,6 +145,7 @@
                       </div>
                       <p th:if="${#fields.hasErrors('Title')}" th:errors="*{Title}" class="fieldError">Incorrect data</p>
 
+
                       <div class="form-row">
                         <div class="form-group col-md-6">
                           <label for="Author">Author</label>
@@ -152,47 +153,59 @@
                         </div>
                       </div>
                       <p th:if="${#fields.hasErrors('Author')}" th:errors="*{Author}" class="fieldError">Incorrect data</p>
+
+
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="Purpose">Purpose</label>
+                          <input type="text" th:field="*{Purpose}" class="form-control" id="Purpose">
+                        </div>
+                      </div>
+                      <p th:if="${#fields.hasErrors('Purpose')}" th:errors="*{Purpose}" class="fieldError">Incorrect data</p>
+
+
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="UsingLang">Using Languages</label>
+                          <input type="text" th:field="*{UsingLang}" class="form-control" id="UsingLang" placeholder="java">
+                        </div>
+                      </div>
+                      <p th:if="${#fields.hasErrors('UsingLang')}" th:errors="*{UsingLang}" class="fieldError">Incorrect data</p>
+
+
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="UsingTech">Using Technologies</label>
+                          <input type="text" th:field="*{UsingTech}" class="form-control" id="UsingTech" placeholder="Environments(mac, window,IDEs,Tools, frameworks, etc)">
+                        </div>
+                      </div>
+                      <p th:if="${#fields.hasErrors('UsingTech')}" th:errors="*{UsingTech}" class="fieldError">Incorrect data</p>
+
+
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="GitHub">GitHub address</label>
+                          <input type="text" th:field="*{GitHub}" class="form-control" id="GitHub" placeholder="https://github.com/hanbikim/opensourcedev_prj">
+                        </div>
+                      </div>
+                      <p th:if="${#fields.hasErrors('GitHub')}" th:errors="*{GitHub}" class="fieldError">Incorrect data</p>
 
                       <div class="form-row">
                         <div class="form-group col-md-6">
                           <label for="EffectiveDate">EffectiveDate</label>
-                          <input type="text" th:field="*{EffectiveDate}" class="EffectiveDate" id="EffectiveDate">
+                          <input type="date" th:field="*{EffectiveDate}" class="EffectiveDate" id="EffectiveDate">
                         </div>
                       </div>
                       <p th:if="${#fields.hasErrors('EffectiveDate')}" th:errors="*{EffectiveDate}" class="fieldError">Incorrect data</p>
 
-                      <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="Author">Author</label>
-                          <input type="text" th:field="*{Author}" class="form-control" id="Author" placeholder="guildong Hong">
-                        </div>
-                      </div>
-                      <p th:if="${#fields.hasErrors('Author')}" th:errors="*{Author}" class="fieldError">Incorrect data</p>
 
                       <div class="form-row">
                         <div class="form-group col-md-6">
-                          <label for="Author">Author</label>
-                          <input type="text" th:field="*{Author}" class="form-control" id="Author" placeholder="guildong Hong">
+                          <label for="Deadline">Deadline</label>
+                          <input type="date" th:field="*{Deadline}" class="form-control" id="Deadline" >
                         </div>
                       </div>
-                      <p th:if="${#fields.hasErrors('Author')}" th:errors="*{Author}" class="fieldError">Incorrect data</p>
-
-                      <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="Author">Author</label>
-                          <input type="text" th:field="*{Author}" class="form-control" id="Author" placeholder="guildong Hong">
-                        </div>
-                      </div>
-                      <p th:if="${#fields.hasErrors('Author')}" th:errors="*{Author}" class="fieldError">Incorrect data</p>
-
-                      <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="Author">Author</label>
-                          <input type="text" th:field="*{Author}" class="form-control" id="Author" placeholder="guildong Hong">
-                        </div>
-                      </div>
-                      <p th:if="${#fields.hasErrors('Author')}" th:errors="*{Author}" class="fieldError">Incorrect data</p>
-
+                      <p th:if="${#fields.hasErrors('Deadline')}" th:errors="*{Deadline}" class="fieldError">Incorrect data</p>
 
                       <div class="form-row">
                         <div class="form-group col-md-12">

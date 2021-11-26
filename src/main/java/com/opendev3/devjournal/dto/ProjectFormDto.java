@@ -20,19 +20,22 @@ public class ProjectFormDto {
     private String Author;
 
     @NotBlank(message = "필수 입력 값입니다.")
-    private String EffectiveDate;               //시작날짜
+    private String EffectiveDate;
 
     @NotBlank(message = "필수 입력 값입니다.")
-    private String Deadline;               //마감일
+    private String Deadline;
 
     @NotBlank(message = "필수 입력 값입니다.")
-    private String GitHub;               //깃헙 주소
+    private String GitHub;
 
     @NotBlank(message = "필수 입력 값입니다.")
-    private String UsingTech;               //사용한 기술
+    private String UsingTech;
 
     @NotBlank(message = "필수 입력 값입니다.")
-    private String UsingLang;               //사용한 언어
+    private String UsingLang;
+
+    @NotBlank(message = "필수 입력 값입니다.")
+    private String Purpose;
 
     @NotBlank(message = "필수 입력 값입니다.")
     private String feDescription;

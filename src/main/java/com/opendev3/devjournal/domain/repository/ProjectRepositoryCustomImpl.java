@@ -36,7 +36,7 @@ public class ProjectRepositoryCustomImpl implements ProjectRepositoryCustom {
         QueryResults<MainProjectDto> result = queryFactory
                 .select(
                         new QMainProjectDto(
-                                project.prj_Id,
+                                project.prj_Id/*,
                                 project.Title,
                                 project.Author,
                                 project.EffectiveDate,
@@ -44,7 +44,8 @@ public class ProjectRepositoryCustomImpl implements ProjectRepositoryCustom {
                                 project.GitHub,
                                 project.UsingTech,
                                 project.UsingLang,
-                                project.feDescription)
+                                project.Purpose,
+                                project.feDescription*/)
                 )
                 .from(project)
                 .where(projectNameLike(projectSearchDto.getSearchQuery()))
@@ -58,3 +59,4 @@ public class ProjectRepositoryCustomImpl implements ProjectRepositoryCustom {
         return new PageImpl<>(content, pageable, total);
     }
 }
+
