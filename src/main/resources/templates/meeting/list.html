@@ -12,6 +12,9 @@
     <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="/styles/shards-dashboards.1.1.0.min.css">
     <link rel="stylesheet" href="/styles/extras.1.1.0.min.css">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <style>
+        i.custom {font-size: 3em; color: white; position: absolute; left: 3px;}
+    </style>
 </head>
 <body class="h-100">
 <div class="container-fluid">
@@ -122,26 +125,56 @@
                 </nav>
             </div>
             <!-- / .main-navbar -->
-            <a th:href="@{/meetup/post}">write</a>
+            <div class="color-switcher-toggle animated pulse infinite">
+                <a class="nav-link animated pulse infinite" href="/tidy/post">
+                    <i class="material-icons custom">add_circle</i>
+                </a>
+            </div>
 
-            <table>
-                <thead>
-                <tr>
-                    <th class="ten wide">title</th>
-                </tr>
-                </thead>
+            <div class="color-switcher-toggle animated pulse infinite">
+                <a class="nav-link animated pulse infinite" href="/meetup/post">
+                    <i class="material-icons custom">add_circle</i>
+                </a>
+            </div>
 
-                <tbody>
-                <!-- CONTENTS !-->
-                <tr th:each="meeting : ${meetingList}">
-                    <td>
-                        <a th:href="@{'/meetup/post/' + ${meeting.meetid}}">
-                            <span th:text="${meeting.mtitle}"></span>
-                        </a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="container-fluid">
+                <div class="col-lg-8">
+                    <div class="card card-small mb-4">
+                        <div class="card-header border-bottom">
+                            <h6 class="m-0">Meeting List</h6>
+                        </div>
+                        <table>
+                            <thead>
+                            <tr>
+<!--                                <th class="h2">title</th>-->
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <!-- CONTENTS !-->
+
+                            <div class="ml-5">
+                                <div class="col-lg-8 col-md-6 col-sm-12 mb-4">
+                                    <div class="card card-small card-post card-post--1">
+                                        <tr th:each="meeting : ${meetingList}">
+                                            <td>
+                                                <a th:href="@{'/meetup/post/' + ${meeting.meetid}}">
+                                                    <span th:text="${meeting.mtitle}"></span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </div>
+                                </div>
+                            </div>
+
+                            </tbody>
+                        </table>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
 
         </main>
     </div>

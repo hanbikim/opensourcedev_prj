@@ -122,27 +122,63 @@
                 </nav>
             </div>
             <!-- / .main-navbar -->
-            <h2 th:text="${devjournalDto.title}"></h2>
 
-            <p th:inline="text">작성일 : [[${#temporals.format(devjournalDto.createdDate, 'yyyy-MM-dd HH:mm')}]]</p>
-            느낀점<br>
-            <p th:text="${devjournalDto.emotion}"></p>
-            궁금한 점<br>
-            <p th:text="${devjournalDto.curiosity}"></p>
-            개선할 점<br>
-            <p th:text="${devjournalDto.improvement}"></p>
-            문제점<br>
-            <p th:text="${devjournalDto.problem}"></p>
+            <div class="mt-2"></div>
+            <div class="col-lg-8">
+                <div class="card card-small mb-4">
+
+                    <h2 th:text="${devjournalDto.title}"></h2>
+
+                    <div class="container">
+                        <div class="mt-5"></div>
+                        <h8 class="display-5">Created date</h8>
+                        <hr class="my-3">
+                        <p th:inline="text" class="h5">[[${#temporals.format(devjournalDto.createdDate, 'yyyy-MM-dd HH:mm')}]]</p>
+                    </div>
+
+                    <div class="container">
+                        <div class="mt-5"></div>
+                        <h8 class="display-5">Takeaway</h8> <!--//느낀점-->
+                        <hr class="my-3">
+                        <p class="h5" th:text="${devjournalDto.emotion}"></p>
+                    </div>
+
+                    <div class="container">
+                        <div class="mt-5"></div>
+                        <h8 class="display-5">${devjournalDto.improvement}</h8>   <!--개선할점-->
+                        <hr class="my-3">
+                        <p class="h5" th:text="{devjournalDto.improvement}"></p>
+                    </div>
+
+
+                    <div class="container">
+                        <div class="mt-5"></div>
+                        <h8 class="display-5">Questions</h8>
+                        <hr class="my-3">
+                        <p class="h5" th:text="${devjournalDto.curiosity}"></p>
+                    </div>
+
+
+                    <div class="container">
+                        <div class="mt-5"></div>
+                        <h8 class="display-5">Problems</h8>
+                        <hr class="my-3">
+                        <p class="h5" th:text="$${devjournalDto.problem}"></p>
+                    </div>
+
+                    <div class="my-5"></div>
+                </div>
+            </div>
 
             <!-- 수정/삭제 -->
             <div>
                 <a th:href="@{'/tidy/post/edit/' + ${devjournalDto.tidyid}}">
-                    <button>수정</button>
+                    <button type="submit" class="btn btn-primary">modify</button>
                 </a>
 
                 <form id="delete-form" th:action="@{'/tidy/post/' + ${devjournalDto.tidyid}}" method="post">
                     <input type="hidden" name="_method" value="delete"/>
-                    <button id="delete-btn">삭제</button>
+                    <button id="delete-btn" class="btn btn-primary">delete</button>
                 </form>
             </div>
             <!-- 변수 셋팅 -->
