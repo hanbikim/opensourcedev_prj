@@ -46,6 +46,13 @@
       height:auto;
       width:50%;
     }
+
+    .pattern {
+      background-color: #555;
+      background-image: linear-gradient(30deg, #444 12%, transparent 12.5%, transparent 87%, #444 87.5%, #444), linear-gradient(150deg, #444 12%, transparent 12.5%, transparent 87%, #444 87.5%, #444), linear-gradient(30deg, #444 12%, transparent 12.5%, transparent 87%, #444 87.5%, #444), linear-gradient(150deg, #444 12%, transparent 12.5%, transparent 87%, #444 87.5%, #444), linear-gradient(60deg, #888 25%, transparent 25.5%, transparent 75%, #888 75%, #888), linear-gradient(60deg, #888 25%, transparent 25.5%, transparent 75%, #888 75%, #888);
+      background-position: 0 0, 0 0, 25px 50px, 25px 50px, 0 0, 25px 50px;
+      background-size: 50px 100px;
+    }
   </style>
 </th:block>
 
@@ -170,8 +177,12 @@
             <input type="hidden" id="projectId" th:value="${project.prj_Id}">
 
             <div class="d-flex">
-              <div class="repImgDiv">
+
+<!--              <div class="repImgDiv col-lg-3" style="background-color: #becad6">
                 <img src="/images/content-management/17.jpg" class = "rounded repImg" th:alt="${project.Title}">
+              </div>-->
+
+              <div class="repImgDiv col-lg-3 pattern" style="background-color: #becad6">
               </div>
 
               <div class="wd50">
@@ -227,8 +238,10 @@
                 <div class="container">
                   <h8 class="display-5">Project Github address</h8>
                     <hr class="my-3">
-                    <div class="h5" href="${project.GitHub}">
+                    <div class="h5">
+                      <a href="${project.GitHub}">
                       <span th:text="${project.GitHub}"></span>
+                      </a>
                     </div>
                 </div>
 

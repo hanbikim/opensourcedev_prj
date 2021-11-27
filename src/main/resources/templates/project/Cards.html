@@ -17,6 +17,37 @@
     <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
     <style>
        i.custom {font-size: 3em; color: white; position: absolute; left: 3px;}
+
+/*       .lb-wrap {
+           width: 50%;
+           margin: 10px auto;
+           border: 1px solid #000000;
+           position: relative;
+       }
+       .lb-wrap img {
+           width: 100%;
+           vertical-align: middle;
+       }*/
+       .lb-text {
+           padding: 10px 20px;
+           border-radius: 10px;
+           text-align: center;
+           position: absolute;
+           top: 35%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+       }
+       .jb-white {
+           color: white;
+       }
+
+       .target {
+           display: inline-block;
+           width: 200px;
+           white-space: nowrap;
+           overflow: hidden;
+           text-overflow: ellipsis;
+       }
     </style>
 </head>
 
@@ -142,7 +173,7 @@
 
                     </nav>
                 </div>
-                <div class="main-content-container container-fluid px-4">
+                <div class="container-fluid">
                     <!--                         End Page Header-->
                     <div class="row">
                         <!--              &lt;!&ndash; 맨 위 네모 카드 &ndash;&gt;-->
@@ -150,9 +181,13 @@
                             <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
                                 <div class="card card-small card-post card-post--1">
                                     <a th:href="'/project/' +${project.prj_Id}" class="text-dark">
-                                        <img src="/images/content-management/17.jpg" class="card-img-top" th:alt="${project.Title}" height="200">
+                                        <img src="/images/content-management/17.jpg" class="card-img-top" th:alt="${project.Title}" height="250">
+                                        <div class="lb-text">
+                                            <div class="h1 jb-white target" th:text="${project.Title}"></div>
+                                        </div>
+
                                         <div class="card-body">
-                                            <h2 class="card-title">[[${project.Title}]]</h2>
+                                            <h4 class="card-title">[[${project.Author}]]</h4>
                                         </div>
                                     </a>
                                 </div>

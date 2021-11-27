@@ -122,21 +122,87 @@
                 </nav>
             </div>
             <!-- / .main-navbar -->
-            <h2 th:text="${meetingDto.mtitle}"></h2>
+            <div class="mt-2"></div>
+            <div class="col-lg-8">
+                <div class="card card-small mb-4">
 
-            <p th:inline="text">작성일 : [[${#temporals.format(meetingDto.createdDate, 'yyyy-MM-dd HH:mm')}]]</p>
-            장소<br>
-            <p th:text="${meetingDto.place}"></p>
-            참석자<br>
-            <p th:text="${meetingDto.people}"><br></p>
-            목적<br>
-            <p th:text="${meetingDto.purpose}"><br></p>
-            주요 안건<br>
-            <p th:text="${meetingDto.pre}"><br></p>
-            내용<br>
-            <p th:text="${meetingDto.mcontent}"><br></p>
-            결과<br>
-            <p th:text="${meetingDto.post}"><br></p>
+<!--                        <div class="wd50">-->
+
+                    <h2 th:text="${meetingDto.mtitle}"></h2>
+
+                    <div class="container">
+                        <div class="mt-5"></div>
+                        <h8 class="display-5">Created date</h8>
+                        <hr class="my-3">
+                        <p th:inline="text" class="h5">[[${#temporals.format(meetingDto.createdDate, 'yyyy-MM-dd HH:mm')}]]</p>
+                    </div>
+
+                    <div class="my-5"></div>
+
+                    <div class="container">
+                        <div class="mt-5"></div>
+                        <h8 class="display-5">Meeting Place</h8>
+                        <hr class="my-3">
+                        <p class="h5" th:text="${meetingDto.place}"></p>
+                    </div>
+
+                    <div class="my-5"></div>
+
+
+                    <div class="container">
+                        <div class="mt-5"></div>
+                        <h8 class="display-5">Participants</h8>
+                        <hr class="my-3">
+                        <p class="h5" th:text="${meetingDto.people}"></p>
+                    </div>
+
+                    <div class="my-5"></div>
+
+
+                    <div class="container">
+                        <div class="mt-5"></div>
+                        <h8 class="display-5">Meeting Purpose</h8>
+                        <hr class="my-3">
+                        <p class="h5" th:text="${meetingDto.purpose}"></p>
+                    </div>
+
+                    <div class="my-5"></div>
+
+
+                    <div class="container">
+                        <div class="mt-5"></div>
+                        <h8 class="display-5">Meeting Agenda</h8>
+                        <hr class="my-3">
+                        <p class="h5" th:text="${meetingDto.pre}"></p>
+                    </div>
+
+                    <div class="my-5"></div>
+
+
+                    <div class="container">
+                        <div class="mt-5"></div>
+                        <h8 class="display-5">Meeting Contents</h8>
+                        <hr class="my-3">
+                        <p class="h5" th:text="${meetingDto.mcontent}"></p>
+                    </div>
+
+                    <div class="my-5"></div>
+
+
+                    <div class="container">
+                        <div class="mt-5"></div>
+                        <h8 class="display-5">Meeting Results</h8>
+                        <hr class="my-3">
+                        <p class="h5" th:text="${meetingDto.post}"></p>
+                    </div>
+
+                    <div class="my-5"></div>
+                </div>
+            </div>
+
+
+
+
 
             <!-- 수정/삭제 -->
             <div>

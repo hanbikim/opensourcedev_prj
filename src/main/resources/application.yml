@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/dj_db?serverTimezone=UTC&characterEncoding=UTF-8
     username: root
-    password: SQL!s2q3l
+    password:
 
   mvc:
     hiddenmethod:
