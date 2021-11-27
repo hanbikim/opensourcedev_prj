@@ -126,10 +126,6 @@
             <div class="col-lg-8">
                 <div class="card card-small mb-4">
 
-<!--                        <div class="wd50">-->
-
-                    <h2 th:text="${meetingDto.mtitle}"></h2>
-
                     <div class="container">
                         <div class="mt-5"></div>
                         <h8 class="display-5">Created date</h8>
@@ -188,11 +184,12 @@
 
 
             <!-- 수정/삭제 -->
-            <div>
+            <div class="row">
+                <div class="ml-4"></div>
                 <a th:href="@{'/meetup/post/edit/' + ${meetingDto.meetid}}">
                     <button type="submit" class="btn btn-primary">modify</button>
                 </a>
-
+                <div class="ml-2"></div>
                 <form id="delete-form" th:action="@{'/meetup/post/' + ${meetingDto.meetid}}" method="post">
                     <input type="hidden" name="_method" value="delete"/>
                     <button id="delete-btn" class="btn btn-primary">delete</button>

@@ -153,19 +153,21 @@
                             <tbody>
                             <!-- CONTENTS !-->
 
-                            <div class="ml-5">
-                                <div class="col-lg-8 col-md-6 col-sm-12 mb-4">
-                                    <div class="card card-small card-post card-post--1">
-                                        <tr th:each="meeting : ${meetingList}">
-                                            <td>
-                                                <a th:href="@{'/meetup/post/' + ${meeting.meetid}}">
-                                                    <span th:text="${meeting.mtitle}"></span>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </div>
-                                </div>
-                            </div>
+
+                                            <tr th:each="meeting : ${meetingList}">
+                                                <td>
+                                                    <a th:href="@{'/meetup/post/' + ${meeting.meetid}}">
+                                                        <div class="container-fluid">
+                                                            <div class="col-lg-8 col-md-6 col-sm-12 mb-4">
+                                                                <div class="card card-small card-post card-post--1">
+                                                                    <span class="ml-2 h4" th:text="${meeting.mtitle}"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </td>
+                                            </tr>
+
 
                             </tbody>
                         </table>

@@ -123,37 +123,10 @@
             </div>
             <!-- / .main-navbar -->
             <form th:action="@{'/meetup/post/edit/' + ${meetingDto.meetid}}" method="post">
-                <!--<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />-->
                 <input type="hidden" name="_method" value="put"/>
                 <input type="hidden" name="meetid" th:value="${meetingDto.meetid}"/>
 
-                <p>제목<br>
-                    <input type="text" name="mtitle" th:value="${meetingDto.mtitle}"> <br>
-                </p>
-                <p>장소<br>
-                    <input type="text" name="place" th:value="${meetingDto.place}"> <br>
-                </p>
-                <p>참석자<br>
-                    <input type="text" name="people" th:value="${meetingDto.people}"> <br>
-                </p>
-                <p>목적<br>
-                    <input type="text" name="purpose" th:value="${meetingDto.purpose}"> <br>
-                </p>
-                <p>주요 안건<br>
-                    <input type="text" name="pre" th:value="${meetingDto.pre}"> <br>
-                </p>
-                <p>내용<br>
-                    <input type="text" name="mcontent" th:value="${meetingDto.mcontent}"> <br>
-                </p>
-                <p>결과<br>
-                    <input type="text" name="post" th:value="${meetingDto.post}"> <br>
-                </p>
-
-
                 <div class="mt-2"></div>
-                <form th:action="@{'/meetup/post/edit/' + ${meetingDto.meetid}}" method="post">
-                    <input type="hidden" name="_method" value="put"/>
-                    <input type="hidden" name="meetid" th:value="${meetingDto.meetid}"/>
                     <div class="col-lg-8">
                         <div class="card card-small mb-4">
 
@@ -171,7 +144,6 @@
                                                 <input type="text" name="mtitle" id="mtitle" th:value="${meetingDto.mtitle}">
                                             </div>
                                         </div>
-                                        <p th:if="${#fields.hasErrors('mtitle')}" th:errors="*{mtitle}" class="fieldError">Incorrect data</p>
 
 
                                         <div class="form-row">
@@ -180,7 +152,6 @@
                                                 <input type="text" name="place" id="place" th:value="${meetingDto.place}">
                                             </div>
                                         </div>
-                                        <p th:if="${#fields.hasErrors('place')}" th:errors="*{place}" class="fieldError">Incorrect data</p>
 
 
                                         <div class="form-row">
@@ -189,7 +160,6 @@
                                                 <input type="text" name="people" id="people" th:value="${meetingDto.people}">
                                             </div>
                                         </div>
-                                        <p th:if="${#fields.hasErrors('people')}" th:errors="*{people}" class="fieldError">Incorrect data</p>
 
 
                                         <div class="form-row">
@@ -198,7 +168,6 @@
                                                 <input type="text" name="purpose" id="purpose" th:value="${meetingDto.purpose}">
                                             </div>
                                         </div>
-                                        <p th:if="${#fields.hasErrors('purpose')}" th:errors="*{purpose}" class="fieldError">Incorrect data</p>
 
 
                                         <div class="form-row">
@@ -207,7 +176,6 @@
                                                 <input type="text" name="pre" id="pre" th:value="${meetingDto.pre}">
                                             </div>
                                         </div>
-                                        <p th:if="${#fields.hasErrors('pre')}" th:errors="*{pre}" class="fieldError">Incorrect data</p>
 
 
                                         <div class="form-row">
@@ -216,7 +184,6 @@
                                                 <input type="text" name="mcontent" id="mcontent" th:value="${meetingDto.mcontent}">
                                             </div>
                                         </div>
-                                        <p th:if="${#fields.hasErrors('mcontent')}" th:errors="*{mcontent}" class="fieldError">Incorrect data</p>
 
 
                                         <div class="form-row">
@@ -225,9 +192,6 @@
                                                 <input type="text" name="post" id="post" th:value="${meetingDto.post}">
                                             </div>
                                         </div>
-                                        <p th:if="${#fields.hasErrors('post')}" th:errors="*{post}" class="fieldError">Incorrect data</p>
-
-
 
                                     </div>
                                 </li>
@@ -236,6 +200,7 @@
                     </div>
 
                 <input type="submit" value="수정">
+
             </form>
 
         </main>

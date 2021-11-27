@@ -122,8 +122,8 @@
                 </nav>
             </div>
             <!-- / .main-navbar -->
-            <form th:action="@{'/tidy/post/edit/' + ${devjournalDto.tidyid}}" method="post">
-                <!---<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />-->
+<!--            <form th:action="@{'/tidy/post/edit/' + ${devjournalDto.tidyid}}" method="post">
+                &lt;!&ndash;-<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />&ndash;&gt;
                 <input type="hidden" name="_method" value="put"/>
                 <input type="hidden" name="tidyid" th:value="${devjournalDto.tidyid}"/>
 
@@ -144,8 +144,72 @@
                 </p>
 
                 <input type="submit" value="수정">
-            </form>
+            </form>-->
 
+            <form th:action="@{'/tidy/post/edit/' + ${devjournalDto.tidyid}}" method="post">
+                <input type="hidden" name="_method" value="put"/>
+                <input type="hidden" name="tidyid" th:value="${devjournalDto.tidyid}"/>
+
+                <div class="mt-2"></div>
+                <div class="col-lg-8">
+                    <div class="card card-small mb-4">
+
+                        <div class="card-header border-bottom">
+                            <h6 class="m-0">Minutes of Meeting</h6>
+                        </div>
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item p-3">
+                                <div class="col">
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="title">Title</label>
+                                            <input type="text" name="title" id="title" th:value="${devjournalDto.title}">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="emotion">Takeaway</label>
+                                            <input type="text" name="emotion" id="emotion" th:value="${devjournalDto.emotion}">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="curiosity">Questions</label>
+                                            <input type="text" name="curiosity" id="curiosity" th:value="${devjournalDto.curiosity}">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="improvement">Bad Points(need to improve)</label>
+                                            <input type="text" name="improvement" id="improvement" th:value="${devjournalDto.improvement}">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="problem">Problems</label>
+                                            <input type="text" name="problem" id="problem" th:value="${devjournalDto.problem}">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <input type="submit" value="수정">
+
+            </form>
 
 
         </main>

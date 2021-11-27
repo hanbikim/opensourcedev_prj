@@ -127,8 +127,6 @@
             <div class="col-lg-8">
                 <div class="card card-small mb-4">
 
-                    <h2 th:text="${devjournalDto.title}"></h2>
-
                     <div class="container">
                         <div class="mt-5"></div>
                         <h8 class="display-5">Created date</h8>
@@ -145,9 +143,9 @@
 
                     <div class="container">
                         <div class="mt-5"></div>
-                        <h8 class="display-5">${devjournalDto.improvement}</h8>   <!--개선할점-->
+                        <h8 class="display-5">Bad Points(need to improve)</h8>   <!--개선할점-->
                         <hr class="my-3">
-                        <p class="h5" th:text="{devjournalDto.improvement}"></p>
+                        <p class="h5" th:text="${devjournalDto.improvement}"></p>
                     </div>
 
 
@@ -163,7 +161,7 @@
                         <div class="mt-5"></div>
                         <h8 class="display-5">Problems</h8>
                         <hr class="my-3">
-                        <p class="h5" th:text="$${devjournalDto.problem}"></p>
+                        <p class="h5" th:text="${devjournalDto.problem}"></p>
                     </div>
 
                     <div class="my-5"></div>
@@ -171,16 +169,18 @@
             </div>
 
             <!-- 수정/삭제 -->
-            <div>
+            <div class="row">
+                <div class="ml-4"></div>
                 <a th:href="@{'/tidy/post/edit/' + ${devjournalDto.tidyid}}">
                     <button type="submit" class="btn btn-primary">modify</button>
                 </a>
-
+                <div class="ml-2"></div>
                 <form id="delete-form" th:action="@{'/tidy/post/' + ${devjournalDto.tidyid}}" method="post">
                     <input type="hidden" name="_method" value="delete"/>
                     <button id="delete-btn" class="btn btn-primary">delete</button>
                 </form>
             </div>
+
             <!-- 변수 셋팅 -->
             <script th:inline="javascript">
                 /*<![CDATA[*/

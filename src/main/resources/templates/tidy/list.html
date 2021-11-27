@@ -140,20 +140,24 @@
                                 <table>
                                     <thead>
                                     <tr>
-                                        <th class="h2">title</th>
+<!--                                        <th class="h2">title</th>-->
                                     </tr>
                                     </thead>
 
                                     <tbody>
                                     <!-- CONTENTS !-->
                                     <tr th:each="devjournal : ${devjournalList}">
-                                        <div class="ml-5">
                                         <td>
                                             <a th:href="@{'/tidy/post/' + ${devjournal.tidyid}}">
-                                                <span class="h1" th:text="${devjournal.title}"></span>
+                                                <div class="container-fluid">
+                                                    <div class="col-lg-8 col-md-6 col-sm-12 mb-4">
+                                                        <div class="card card-small card-post card-post--1">
+                                                            <span class="ml-2 h4" th:text="${devjournal.title}"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </a>
                                         </td>
-                                        </div>
                                     </tr>
                                     </tbody>
                                 </table>
