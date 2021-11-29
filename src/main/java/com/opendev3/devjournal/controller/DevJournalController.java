@@ -18,10 +18,12 @@ public class DevJournalController {
 
     /* 게시글 목록 */
     @GetMapping("/tidy")
-    public String list(Model model) {
-        List<DevJournalDto> devjournalList = devjournalService.getDevJournallist();
+    public String list(Model model, @RequestParam(value="page", defaultValue = "1") Integer pageNum) {
+        List<DevJournalDto> devjournalList = devjournalService.getDevJournallist(pageNum);
+        Integer[] pageList = devjournalService.getPageList(pageNum);
 
         model.addAttribute("devjournalList", devjournalList);
+        model.addAttribute("pageList", pageList);
         return "/tidy/list";
     }
 
@@ -67,5 +69,15 @@ public class DevJournalController {
 
         return "redirect:/tidy";
     }
+
+    @GetMapping("/board/search")
+    public String search(@RequestParam(value="keyword") String keyword, Model model) {
+        List<DevJournalDto> devjournalDtoList = devjournalService.searchPosts(keyword);
+
+        model.addAttribute("devjournalList", devjournalDtoList);
+
+        return "/tidy/list";
+    }
+
 
 }
