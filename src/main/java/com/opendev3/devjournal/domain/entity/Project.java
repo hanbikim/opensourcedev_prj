@@ -47,6 +47,11 @@ public class Project{
     @Column(nullable=false)
     private String feDescription;       //프로젝트 상세설명
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="user_id")
+    private User user;
+
+
 
     public void updateProject(ProjectFormDto projectFormDto) {
         this.Title = projectFormDto.getTitle();

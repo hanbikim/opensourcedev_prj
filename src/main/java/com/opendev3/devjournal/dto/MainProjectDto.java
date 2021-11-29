@@ -1,5 +1,6 @@
 package com.opendev3.devjournal.dto;
 
+import com.opendev3.devjournal.domain.entity.User;
 import com.querydsl.core.annotations.QueryProjection;
 import lombok.Getter;
 import lombok.Setter;

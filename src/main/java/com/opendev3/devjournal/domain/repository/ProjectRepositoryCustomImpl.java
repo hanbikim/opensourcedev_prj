@@ -44,7 +44,8 @@ public class ProjectRepositoryCustomImpl implements ProjectRepositoryCustom {
                                 project.UsingTech,
                                 project.GitHub,
                                 project.Deadline,
-                                project.feDescription)
+                                project.feDescription,
+                                project.user)
                 )
                 .from(project)
                 .where(projectNameLike(projectSearchDto.getSearchQuery()))
