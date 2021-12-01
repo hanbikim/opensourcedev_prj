@@ -20,6 +20,9 @@ public class MeetingEntity extends TimeEntity {
     private String mtitle;
 
     @Column(length = 100, nullable = false)
+    private String mprjTitle;
+
+    @Column(length = 100, nullable = false)
     private String place;
 
     @Column(length = 100, nullable = false)
@@ -39,10 +42,11 @@ public class MeetingEntity extends TimeEntity {
 
 
     @Builder
-    public MeetingEntity(Long meetid, String mtitle, String place,String people, String purpose,
+    public MeetingEntity(Long meetid, String mprjTitle, String mtitle, String place,String people, String purpose,
                          String pre, String mcontent, String post) {
         this.meetid = meetid;
         this.mtitle = mtitle;
+        this.mprjTitle=mprjTitle;
         this.place = place;
         this.people = people;
         this.purpose = purpose;

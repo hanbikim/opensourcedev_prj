@@ -1,9 +1,6 @@
 package com.opendev3.devjournal.service;
 
-import com.opendev3.devjournal.domain.entity.DevJournalEntity;
 import com.opendev3.devjournal.domain.entity.MeetingEntity;
-import com.opendev3.devjournal.domain.repository.DevJournalRepository;
-import com.opendev3.devjournal.dto.DevJournalDto;
 import com.opendev3.devjournal.dto.MeetingDto;
 import com.opendev3.devjournal.domain.repository.MeetingRepository;
 import lombok.AllArgsConstructor;
@@ -35,6 +32,7 @@ public class MeetingService {
             MeetingDto meetingDTO = MeetingDto.builder()
                     .meetid(meetingEntity.getMeetid())
                     .mtitle(meetingEntity.getMtitle())
+                    .mprjTitle(meetingEntity.getMprjTitle())
                     .place(meetingEntity.getPlace())
                     .people(meetingEntity.getPeople())
                     .purpose(meetingEntity.getPurpose())
@@ -59,6 +57,7 @@ public class MeetingService {
         MeetingDto meetingDTO =MeetingDto.builder()
                 .meetid(meetingEntity.getMeetid())
                 .mtitle(meetingEntity.getMtitle())
+                .mprjTitle(meetingEntity.getMprjTitle())
                 .place(meetingEntity.getPlace())
                 .people(meetingEntity.getPeople())
                 .purpose(meetingEntity.getPurpose())
@@ -89,7 +88,7 @@ public class MeetingService {
 
     @Transactional
     public List<MeetingDto> searchPosts(String keyword) {
-        List<MeetingEntity> meetingEntities = MeetingRepository.findByTitleContaining(keyword);
+        List<MeetingEntity> meetingEntities = meetingRepository.findByMprjTitleContaining(keyword);
         List<MeetingDto> meetingDtoList = new ArrayList<>();
 
         if (meetingEntities.isEmpty()) return meetingDtoList;
@@ -130,6 +129,7 @@ public class MeetingService {
         return MeetingDto.builder()
                 .meetid(meetingEntity.getMeetid())
                 .mtitle(meetingEntity.getMtitle())
+                .mprjTitle(meetingEntity.getMprjTitle())
                 .place(meetingEntity.getPlace())
                 .people(meetingEntity.getPeople())
                 .purpose(meetingEntity.getPurpose())

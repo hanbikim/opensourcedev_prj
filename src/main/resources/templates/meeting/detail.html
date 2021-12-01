@@ -57,7 +57,7 @@
                     <li class="nav-item">
                         <a class="nav-link " href="/tidy">
                             <i class="material-icons">note_add</i>
-                            <span>Retrospect</span>
+                            <span>Tidy</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -125,6 +125,13 @@
                         <h8 class="display-5">Created date</h8>
                         <hr class="my-3">
                         <p th:inline="text" class="h5">[[${#temporals.format(meetingDto.createdDate, 'yyyy-MM-dd HH:mm')}]]</p>
+                    </div>
+
+                    <div class="container">
+                        <div class="mt-5"></div>
+                        <h8 class="display-5">Project Title</h8>
+                        <hr class="my-3">
+                        <p class="h5" th:text="${meetingDto.mprjTitle}"></p>
                     </div>
 
                     <div class="container">

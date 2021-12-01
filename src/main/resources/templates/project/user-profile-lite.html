@@ -59,7 +59,7 @@
               <li class="nav-item">
                 <a class="nav-link " href="/tidy">
                   <i class="material-icons">note_add</i>
-                  <span>Retrospect</span>
+                  <span>Tidy</span>
                 </a>
               </li>
               <li class="nav-item">
@@ -135,7 +135,8 @@
                       <div class="form-row">
                         <div class="form-group col-md-6">
                           <label for="Title">Project Name</label>
-                          <input type="text" th:field="*{Title}" class="form-control" id="Title" placeholder="Devjournal_2021">
+                          <input class="form-control" id="Title" placeholder="Devjournal_2021" th:field="*{Title}"
+                                 type="text">
                         </div>
                       </div>
                       <p th:if="${#fields.hasErrors('Title')}" th:errors="*{Title}" class="fieldError">Incorrect data</p>

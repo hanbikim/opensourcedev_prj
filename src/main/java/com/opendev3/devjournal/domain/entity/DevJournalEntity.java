@@ -10,7 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-@Table(name="devjournal")
+@Table(name = "devjournal")
 
 public class DevJournalEntity extends TimeEntity{
     @Id
@@ -38,7 +38,7 @@ public class DevJournalEntity extends TimeEntity{
     @Builder
     public DevJournalEntity(Long tidyid, String prjTitle, String title, String emotion,String curiosity, String improvement, String problem) {
         this.tidyid = tidyid;
-        this.prjTitle= prjTitle;
+        this.prjTitle=prjTitle;
         this.title = title;
         this.emotion = emotion;
         this.curiosity = curiosity;

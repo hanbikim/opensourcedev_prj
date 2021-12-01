@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class DevJournalDto {
     private Long tidyid;
-    private String prjTitle;
     private String title;
+    private String prjTitle;
     private String emotion;
     private String curiosity;
     private String improvement;
@@ -23,8 +23,8 @@ public class DevJournalDto {
     public DevJournalEntity toEntity(){
         DevJournalEntity devjournalEntity = DevJournalEntity.builder()
                 .tidyid(tidyid)
-                .prjTitle(prjTitle)
                 .title(title)
+                .prjTitle(prjTitle)
                 .emotion(emotion)
                 .curiosity(curiosity)
                 .improvement(improvement)
@@ -37,8 +37,8 @@ public class DevJournalDto {
     public DevJournalDto(Long tidyid, String prjTitle, String title, String curiosity, String emotion, String improvement, String problem,
                           LocalDateTime createdDate, LocalDateTime modifiedDate) {
         this.tidyid = tidyid;
-        this.prjTitle= prjTitle;
         this.title = title;
+        this.prjTitle=prjTitle;
         this.emotion = emotion;
         this.curiosity = curiosity;
         this.improvement = improvement;

@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 public class MeetingDto {
     private Long meetid;
     private String mtitle;
+    private String mprjTitle;
     private String place;
     private String people;
     private String purpose;
@@ -26,6 +27,7 @@ public class MeetingDto {
         MeetingEntity meetingEntity = MeetingEntity.builder()
                 .meetid(meetid)
                 .mtitle(mtitle)
+                .mprjTitle(mprjTitle)
                 .place(place)
                 .people(people)
                 .purpose(purpose)
@@ -37,9 +39,10 @@ public class MeetingDto {
     }
 
     @Builder
-    public MeetingDto(Long meetid, String mtitle, String place,String people, String purpose, String pre,
+    public MeetingDto(Long meetid, String mprjTitle, String mtitle, String place,String people, String purpose, String pre,
                       String mcontent, String post, LocalDateTime createdDate, LocalDateTime modifiedDate) {
         this.meetid = meetid;
+        this.mprjTitle=mprjTitle;
         this.mtitle = mtitle;
         this.place = place;
         this.people = people;
