@@ -32,6 +32,7 @@ public class DevJournalService {
         for ( DevJournalEntity devjournalEntity : devjournalEntities) {
             DevJournalDto devjournalDTO = DevJournalDto.builder()
                     .tidyid(devjournalEntity.getTidyid())
+                    .prjTitle(devjournalEntity.getPrjTitle())
                     .emotion(devjournalEntity.getEmotion())
                     .curiosity(devjournalEntity.getCuriosity())
                     .improvement(devjournalEntity.getImprovement())
@@ -54,6 +55,7 @@ public class DevJournalService {
 
         DevJournalDto devjournalDTO = DevJournalDto.builder()
                 .tidyid(devjournalEntity.getTidyid())
+                .prjTitle(devjournalEntity.getPrjTitle())
                 .emotion(devjournalEntity.getEmotion())
                 .curiosity(devjournalEntity.getCuriosity())
                 .improvement(devjournalEntity.getImprovement())
@@ -84,7 +86,7 @@ public class DevJournalService {
 
     @Transactional
     public List<DevJournalDto> searchPosts(String keyword) {
-        List<DevJournalEntity> devjournalEntities = devjournalRepository.findByTitleContaining(keyword);
+        List<DevJournalEntity> devjournalEntities = devjournalRepository.findByPrjTitleContaining(keyword);
         List<DevJournalDto> devjournalDtoList = new ArrayList<>();
 
         if (devjournalEntities.isEmpty()) return devjournalDtoList;
@@ -124,6 +126,7 @@ public class DevJournalService {
     private DevJournalDto convertEntityToDto(DevJournalEntity devjournalEntity) {
         return DevJournalDto.builder()
                 .tidyid(devjournalEntity.getTidyid())
+                .prjTitle(devjournalEntity.getPrjTitle())
                 .emotion(devjournalEntity.getEmotion())
                 .curiosity(devjournalEntity.getCuriosity())
                 .improvement(devjournalEntity.getImprovement())

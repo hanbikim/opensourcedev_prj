@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface DevJournalRepository extends JpaRepository<DevJournalEntity, Long>{
-    List<DevJournalEntity> findByTitleContaining(String keyword);
+    List<DevJournalEntity> findByPrjTitleContaining(String keyword);
 }
