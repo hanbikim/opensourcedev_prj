@@ -1,5 +1,6 @@
 package com.opendev3.devjournal.controller;
 
+import com.opendev3.devjournal.dto.DevJournalDto;
 import com.opendev3.devjournal.dto.MeetingDto;
 import com.opendev3.devjournal.service.MeetingService;
 import lombok.AllArgsConstructor;
@@ -18,10 +19,12 @@ public class MeetingController {
 
     /* 게시글 목록 */
     @GetMapping("/meetup")
-    public String list(Model model) {
-        List<MeetingDto> meetingList = meetingService.getMeetinglist();
+    public String list(Model model, @RequestParam(value="page", defaultValue = "1") Integer pageNum) {
+        List<MeetingDto> meetingList = meetingService.getMeetinglist(pageNum);
+        Integer[] pageList = meetingService.getPageList(pageNum);
 
         model.addAttribute("meetingList", meetingList);
+        model.addAttribute("pageList", pageList);
         return "/meeting/list";
     }
 
@@ -67,5 +70,15 @@ public class MeetingController {
 
         return "redirect:/meetup";
     }
+
+    @GetMapping("/board2/search2")
+    public String search(@RequestParam(value="keyword") String keyword, Model model) {
+        List<MeetingDto> meetingDtoList = meetingService.searchPosts(keyword);
+
+        model.addAttribute("meetingList", meetingDtoList);
+
+        return "/meeting/list";
+    }
+
 
 }
