@@ -165,13 +165,19 @@
                                     </form>
                                     </tbody>
 
-                                    <div>
+
+
+                                </table>
+                                <ul class="pagination justify-content-center">
+                                <li class="page-item"  th:each="pageNum : ${pageList}" th:inline="text">
+                                    <a th:href="@{'/tidy/?page=' + ${pageNum}}">[[${pageNum}]]</a>
+                                </li>
+                                </ul>
+                                <!--<div>
                                     <span th:each="pageNum : ${pageList}" th:inline="text">
                                     <a th:href="@{'/tidy/?page=' + ${pageNum}}">[[${pageNum}]]</a>
                                     </span>
-                                    </div>
-
-                                </table>
+                                </div>-->
                             </li>
                         </ul>
                     </div>

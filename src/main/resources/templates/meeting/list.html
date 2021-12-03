@@ -175,15 +175,13 @@
 
                             </tbody>
 
-                            <div>
-                                    <span th:each="pageNum : ${pageList}" th:inline="text">
-                                    <a th:href="@{'/meetup/?page=' + ${pageNum}}">[[${pageNum}]]</a>
-                                    </span>
-                            </div>
 
                             </tbody>
                         </table>
-                        </li>
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item"  th:each="pageNum : ${pageList}" th:inline="text">
+                                <a th:href="@{'/tidy/?page=' + ${pageNum}}">[[${pageNum}]]</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
