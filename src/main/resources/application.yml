@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/example?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/opendev?serverTimezone=UTC&characterEncoding=UTF-8
     username: root
-    password: skan0504@
+    password: Siliconv1!
 
   mvc:
     hiddenmethod:
@@ -17,7 +17,7 @@ spring:
     show-sql: true
     hibernate:
       format_sql: true
-      ddl-auto: create
+      ddl-auto: update
 
 logging:
   level:
