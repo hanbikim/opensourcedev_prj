@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A high-quality &amp; free Bootstrap admin dashboard template pack that comes with lots of templates and components.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -11,16 +13,117 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="/styles/shards-dashboards.1.1.0.min.css">
     <link rel="stylesheet" href="/styles/extras.1.1.0.min.css">
-    <title>Calendar</title>
+    <title>calendar</title>
     <link rel="stylesheet" href="cstyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c92986acdf.js" crossorigin="anonymous"></script>
     <script src="/js/calendar.js" defer></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <style>
-        i.custom {font-size: 3em; color: white; position: absolute; left: 3px;}
+        table {
+            border-collapse: collapse;
+            background: white;
+            color: black;
+        }
+
+        th,
+        td {
+            font-weight: bold;
+        }
     </style>
 </head>
+<style>
+    table {
+        clear: both;
+    }
+    th {
+        height: 50px;
+        width: 70px;
+        background-color: #2e67c9;
+    }
+    td {
+        text-align: center;
+        height: 50px;
+        width: 70px;
+        background-color: rgb(255, 255, 255);
+    }
+    input {
+        height: 50px;
+        width: 70px;
+        border: none;
+        background-color: #2e67c9;
+        font-size: 30px;
+    }
+    .year_mon{
+        font-size: 25px;
+    }
+    .colToday{
+        background-color: rgb(52, 106, 199);
+    }
+
+</style>
+
+<script>
+    $(function(){
+        var today = new Date();
+        var date = new Date();
+
+        $("input[name=preMon]").click(function() { // 이전달
+            $("#calendar > tbody > td").remove();
+            $("#calendar > tbody > tr").remove();
+            today = new Date ( today.getFullYear(), today.getMonth()-1, today.getDate());
+            buildCalendar();
+        })
+
+        $("input[name=nextMon]").click(function(){ //다음달
+            $("#calendar > tbody > td").remove();
+            $("#calendar > tbody > tr").remove();
+            today = new Date ( today.getFullYear(), today.getMonth()+1, today.getDate());
+            buildCalendar();
+        })
+
+
+        function buildCalendar() {
+
+            nowYear = today.getFullYear();
+            nowMonth = today.getMonth();
+            firstDate = new Date(nowYear,nowMonth,1).getDate();
+            firstDay = new Date(nowYear,nowMonth,1).getDay(); //1st의 요일
+            lastDate = new Date(nowYear,nowMonth+1,0).getDate();
+
+            if((nowYear%4===0 && nowYear % 100 !==0) || nowYear%400===0) { //윤년 적용
+                lastDate[1]=29;
+            }
+
+            $(".year_mon").text(nowYear+"년 "+(nowMonth+1)+"월");
+
+            for (i=0; i<firstDay; i++) { //첫번째 줄 빈칸
+                $("#calendar tbody:last").append("<td></td>");
+            }
+            for (i=1; i <=lastDate; i++){ // 날짜 채우기
+                plusDate = new Date(nowYear,nowMonth,i).getDay();
+                if (plusDate==0) {
+                    $("#calendar tbody:last").append("<tr></tr>");
+                }
+                $("#calendar tbody:last").append("<td class='date'>"+ i +"</td>");
+            }
+            if($("#calendar > tbody > td").length%7!=0) { //마지막 줄 빈칸
+                for(i=1; i<= $("#calendar > tbody > td").length%7; i++) {
+                    $("#calendar tbody:last").append("<td></td>");
+                }
+            }
+            $(".date").each(function(index){ // 오늘 날짜 표시
+                if(nowYear==date.getFullYear() && nowMonth==date.getMonth() && $(".date").eq(index).text()==date.getDate()) {
+                    $(".date").eq(index).addClass('colToday');
+                }
+            })
+        }
+        buildCalendar();
+
+
+    })
+</script>
 <body class="h-100">
 <div class="container-fluid">
     <div class="row">
@@ -89,7 +192,26 @@
                 </ul>
             </div>
         </aside>
-        <!-- End Main Sidebar -->
+        <table id="calendar">
+            <thead>
+            <tr>
+                <th><input name="preMon" type="button" value="<"></th>
+                <th colspan="5" class="year_mon"></th>
+                <th><input name="nextMon" type="button" value=">"></th>
+            </tr>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
         <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
             <div class="main-navbar sticky-top bg-white">
                 <!-- Main Navbar -->
@@ -123,34 +245,6 @@
                     </nav>
                 </nav>
             </div>
-            <!-- / .main-navbar -->
-            <section class="main">
-                <h1 class="main-title">Calendar AND TodoList</h1>
-                <div class="month clearfix">
-            <span class="left">
-                <i class="fas fa-chevron-left left"></i>
-            </span>
-                    <span class="right">
-                <i class="fas fa-chevron-right right"></i>
-            </span>
-                    <p class="month-name"></p>
-                </div>
-                <div class="dayCount">
-                    <ul class="dayCount-list clearfix">
-                        <li>MON</li>
-                        <li>TUE</li>
-                        <li>WED</li>
-                        <li>THU</li>
-                        <li>FRI</li>
-                        <li>SAT</li>
-                        <li>SUN</li>
-                    </ul>
-                </div>
-                <ul class="day clearfix">
-
-                </ul>
-
-            </section>
 
         </main>
     </div>
